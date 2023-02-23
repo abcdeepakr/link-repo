@@ -1,9 +1,16 @@
 import supabase from '../../utils/supabase';
 
-function Home({ countries }) {
+export interface HomeProps{
+  countries: any;
+  country: any; 
+  id: any;
+  name: any;
+}
+
+const Home = (props:HomeProps) => {
   return (
     <ul>
-      {countries.map((country) => (
+      {props.countries.map((country: HomeProps) => (
         <li key={country.id}>{country.name}</li>
       ))}
     </ul>
